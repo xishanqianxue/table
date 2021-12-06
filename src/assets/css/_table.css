@@ -1,0 +1,28 @@
+.table-main{
+    width: 100%;
+    overflow: auto;
+}
+.table-header{
+    width: 100%;
+    background-color: #FAFAFA;
+}
+.table-body{
+    width: 100%;
+}
+.column-hidden{
+    visibility: hidden;
+    position: absolute;
+}
+.table-no_border{
+    border-bottom: 1px solid #DCDFE6;
+}
+.table-on_hover{
+    background-color: rgba(245,247,250,.5);
+}
+.empty-box{
+    /* height: 100px;
+    line-height: 100px; */
+    padding: 50px 0px;
+    text-align: center;
+    color: #606266;
+}
