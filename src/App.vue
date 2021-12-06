@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <test-table height="240px" :data="list">
+    <test-table border height="240px" :data="list">
       <table-column width="120px" align="center" label="名称" prop="name">
         <!-- <template>
           <div>7777</div>
@@ -13,7 +13,6 @@
       </table-column>
       <table-column label="创建日期" prop="date"></table-column>
       <table-column label="描述" prop="description"></table-column>
-      <div slot="empty">暂无数据</div>
     </test-table>
   </div>
 </template>

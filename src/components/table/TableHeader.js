@@ -12,7 +12,7 @@ export default{
                 </colgroup>
                 <tr>
                     {this._l(state.column,(option)=>{
-                    return <th class={border||'table-no_border'} align={option.headeralign||option.align||'left'}>
+                    return <th class={border?'table-border':'table-no_border'} align={option.headeralign||option.align||'left'}>
                         {option.label}
                     </th>
                     })}

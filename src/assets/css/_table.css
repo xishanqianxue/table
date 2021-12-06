@@ -13,6 +13,10 @@
     visibility: hidden;
     position: absolute;
 }
+.table-border{
+    border: 1px solid #DCDFE6;
+    border-collapse:collapse;
+}
 .table-no_border{
     border-bottom: 1px solid #DCDFE6;
 }
@@ -25,4 +29,6 @@
     padding: 50px 0px;
     text-align: center;
     color: #606266;
+    border: 1px solid #DCDFE6;
+    border-collapse:collapse;
 }

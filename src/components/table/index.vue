@@ -1,14 +1,13 @@
 <template>
     <div id="table-main" ref="table-main" :style="{'height':height||''}">
-        <table class="table-main" :border="border?1:0" cellspacing="0" cellpadding="10">
+        <table class="table-main" cellspacing="0" cellpadding="10">
             <table-header></table-header>
             <div class="column-hidden">
                 <slot></slot>
             </div>
-            <div ref="slot" v-if="!emptyText&&!data.length" class="empty-box">
+            <EmptyBox>
                 <slot name="empty"></slot>
-            </div>
-            <EmptyBox></EmptyBox>
+            </EmptyBox>
             <table-body></table-body>
             <iframe id="iframe-box" style="height:0;width:100%;border:none;visibility: hidden;position:absolute;"></iframe>
         </table>

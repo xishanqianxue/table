@@ -28,7 +28,7 @@ export default{
                         {this._l(store.state.column,(option)=>{
                            return <td on-mouseout={onMouseOut(index+1)}
                                     on-mouseover={onMouseOver(index+1)} 
-                                    class={(border||'table-no_border ')+((index===store.state.current_row)&&'table-on_hover ')} 
+                                    class={(border?'table-border ':'table-no_border ')+((index===store.state.current_row)&&'table-on_hover ')} 
                                     align={option.align||'left'}>
                                         {option.slot?option.slot:row[option.prop]}
                                   </td>
