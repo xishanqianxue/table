@@ -2,14 +2,11 @@
   <div id="app">
     <test-table border height="240px" :data="list">
       <table-column width="120px" align="center" label="名称" prop="name">
-        <!-- <template>
-          <div>7777</div>
+        <template v-slot:scope="prop">
           <div>
-            6666
-            <span class="new-test">111</span>
-            <span style="font-size:12px;"></span>
+            {{'test22+'+prop.username}}
           </div>
-        </template> -->
+        </template>
       </table-column>
       <table-column label="创建日期" prop="date"></table-column>
       <table-column label="描述" prop="description"></table-column>
@@ -18,13 +15,9 @@
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
-  components: {
-    // HelloWorld
-  },
   created() {
     // this.list = [];
   },
@@ -45,8 +38,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   /* width: 80%; */
   margin: auto;
-}
-.new-test{
-  font-size: 12px;
 }
 </style>

@@ -18,7 +18,12 @@ export default{
         headerAlign:String
         // sortable:Boolean
     },
-    created() {
+    data() {
+        return {
+            slot:null
+        }
+    },
+    mounted() {
         let store = this.$parent.store
         let option = getColumnProps({
             prop:this.prop,
@@ -26,13 +31,22 @@ export default{
             width:this.width||'',
             align:this.align||'',
             headeralign:this.headerAlign||'',
-            slot:this.$slots.default||''
+            slot:this.$scopedSlots.scope?this.$scopedSlots.scope({name:'scope',username:'666'}):(this.$slots.default||'')
             // sortable:this.sortable
         })
-        // console.log(this.$slots.default);
         store.setState('column',option,'push')
     },
-    render(h){
-        return h('div',this.$slots.default)
+    render:function(createElement){
+        if(this.$scopedSlots.default){
+            return createElement('div',[
+                this.$scopedSlots.default({
+                    name:'scope',
+                    username:'666'
+                })
+            ])
+        }else{
+            return createElement('div',this.$slots.default)
+        }
+        
     }
 }

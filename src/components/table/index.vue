@@ -34,6 +34,9 @@
             border:[Boolean],
             emptyText:[String],
         },
+        created() {
+            this.store.setState('column',[])
+        },
         mounted() {
             let _this = this
             document.getElementById('iframe-box').contentWindow.onresize = function(){

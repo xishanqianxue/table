@@ -26,7 +26,8 @@ export default{
                 {this._l(list,(row,index)=>{
                    return <tr>
                         {this._l(store.state.column,(option)=>{
-                           return <td on-mouseout={onMouseOut(index+1)}
+                           return <td 
+                                    on-mouseout={onMouseOut(index+1)}
                                     on-mouseover={onMouseOver(index+1)} 
                                     class={(border?'table-border ':'table-no_border ')+((index===store.state.current_row)&&'table-on_hover ')} 
                                     align={option.align||'left'}>
