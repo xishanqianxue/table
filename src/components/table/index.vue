@@ -1,14 +1,14 @@
 <template>
     <div id="table-main" ref="table-main" :style="{'height':height||''}">
         <table class="table-main" cellspacing="0" cellpadding="10">
-            <table-header></table-header>
+            <table-header :store="store" :border="border"></table-header>
             <div class="column-hidden">
                 <slot></slot>
             </div>
             <EmptyBox>
                 <slot name="empty"></slot>
             </EmptyBox>
-            <table-body></table-body>
+            <table-body :list="data" :store="store" :border="border"></table-body>
             <iframe id="iframe-box" style="height:0;width:100%;border:none;visibility: hidden;position:absolute;"></iframe>
         </table>
     </div>

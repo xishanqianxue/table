@@ -31,22 +31,22 @@ export default{
             width:this.width||'',
             align:this.align||'',
             headeralign:this.headerAlign||'',
-            slot:this.$scopedSlots.scope?this.$scopedSlots.scope({name:'scope',username:'666'}):(this.$slots.default||'')
+            slot:this.$scopedSlots.default||this.$slots.default||''
             // sortable:this.sortable
         })
         store.setState('column',option,'push')
     },
     render:function(createElement){
-        if(this.$scopedSlots.default){
-            return createElement('div',[
-                this.$scopedSlots.default({
-                    name:'scope',
-                    username:'666'
-                })
-            ])
-        }else{
+        // if(this.$scopedSlots.default){
+        //     return createElement('div',[
+        //         this.$scopedSlots.default({
+        //             name:'scope',
+        //             username:'666'
+        //         })
+        //     ])
+        // }else{
             return createElement('div',this.$slots.default)
-        }
+        // }
         
     }
 }

@@ -1,18 +1,20 @@
 export default{
     name: 'TableHeader',
+    props:{
+        store:[Object],
+        border:[Boolean]
+    },
     render() {
-        let state = this.$parent.store.state;
-        let border = this.$parent.border;
         return (
             <div class="table-header">
                 <colgroup>
-                    {this._l(state.column,(option)=>{
-                        return <col width={option.width||state.autoWidth}></col>
+                    {this._l(this.store.state.column,(option)=>{
+                        return <col width={option.width||this.store.state.autoWidth}></col>
                     })}
                 </colgroup>
                 <tr>
-                    {this._l(state.column,(option)=>{
-                    return <th class={border?'table-border':'table-no_border'} align={option.headeralign||option.align||'left'}>
+                    {this._l(this.store.state.column,(option)=>{
+                    return <th class={this.border?'table-border':'table-no_border'} align={option.headeralign||option.align||'left'}>
                         {option.label}
                     </th>
                     })}

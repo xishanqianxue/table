@@ -2,9 +2,10 @@
   <div id="app">
     <test-table border height="240px" :data="list">
       <table-column width="120px" align="center" label="名称" prop="name">
-        <template v-slot:scope="prop">
+        <template v-slot:default="prop">
+          <button>{{prop.row.name}}</button>
           <div>
-            {{'test22+'+prop.username}}
+            {{prop.$index}}
           </div>
         </template>
       </table-column>
