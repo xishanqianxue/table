@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <test-table border height="240px" :data="list">
+    <test-table height="240px" :data="list">
       <table-column width="120px" align="center" label="名称" prop="name">
         <template v-slot:default="prop">
           <button>{{prop.row.name}}</button>
@@ -20,7 +20,7 @@
 export default {
   name: 'App',
   created() {
-    // this.list = [];
+    this.list = [];
   },
   data() {
     return {

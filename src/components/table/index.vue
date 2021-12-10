@@ -5,11 +5,11 @@
             <div class="column-hidden">
                 <slot></slot>
             </div>
-            <EmptyBox>
+            <EmptyBox :emptyText="emptyText" :list="data" :border="border">
                 <slot name="empty"></slot>
             </EmptyBox>
             <table-body :list="data" :store="store" :border="border"></table-body>
-            <iframe id="iframe-box" style="height:0;width:100%;border:none;visibility: hidden;position:absolute;"></iframe>
+            <iframe id="iframe-box"></iframe>
         </table>
     </div>
 </template>
@@ -17,7 +17,6 @@
 <script>
     import TableHeader from './TableHeader'
     import TableBody from './TableBody'
-    // import TableColumn from './TableColumn'
     import TableStore from './tableStore'
     import EmptyBox from './empty-box'
 
@@ -54,5 +53,11 @@
 </script>
 
 <style scoped>
-
+    #iframe-box{
+        height:0;
+        width:100%;
+        border:none;
+        visibility: hidden;
+        position:absolute;
+    }
 </style>

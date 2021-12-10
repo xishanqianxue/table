@@ -35,7 +35,7 @@ export default{
                                     on-mouseout={onMouseOut(index+1)}
                                     on-mouseover={onMouseOver(index+1)} 
                                     class={(this.border?'table-border ':'table-no_border ')+((index===this.store.state.current_row)&&'table-on_hover ')} 
-                                    align={option.align||'left'}>
+                                    align={option.align||'left'} valign="middle">
                                         {option.slot?renderTree(option.slot,{$index:index,row:row}):row[option.prop]}
                                   </td>
                         })}

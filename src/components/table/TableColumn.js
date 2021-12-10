@@ -37,16 +37,6 @@ export default{
         store.setState('column',option,'push')
     },
     render:function(createElement){
-        // if(this.$scopedSlots.default){
-        //     return createElement('div',[
-        //         this.$scopedSlots.default({
-        //             name:'scope',
-        //             username:'666'
-        //         })
-        //     ])
-        // }else{
-            return createElement('div',this.$slots.default)
-        // }
-        
+        return createElement('div',this.$slots.default)        
     }
 }
