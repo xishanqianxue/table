@@ -1,0 +1,15 @@
+.breadcrumb-main{
+    padding: 10px;
+}
+.breadcrumb-item{
+    display: inline-block;
+    color: #909399;
+}
+.breadcrumb-item_link{
+    display: inline-block;
+    font-weight: 500;
+    cursor: pointer;
+}
+.separator-item{
+    margin: 5px;
+}

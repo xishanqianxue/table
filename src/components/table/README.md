@@ -32,11 +32,6 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
               </template>
           -->
         </table-column>
-        /*-- table-column参数及释义 --*/
-        // label:String 表头名称
-        // prop:String 字段名称
-        // align:String 当前列在水平方向上的对齐方式
-        // headerAlign:String 当前列的表头在水平方向上的对齐方式 (优先级：headerAlign>align)
       </test-table>
 
       /*-- table参数及释义 --*/
@@ -49,4 +44,10 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
                     ...
                   </div>
                 </test-table>
+
+      /*-- table-column参数及释义 --*/
+        // label:String 表头名称
+        // prop:String 字段名称
+        // align:String 当前列在水平方向上的对齐方式
+        // headerAlign:String 当前列的表头在水平方向上的对齐方式 (优先级：headerAlign>align)
 ```
