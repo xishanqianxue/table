@@ -1,19 +1,12 @@
 function test(url){
+    const _this = this;
     return function(){
-        if (!url||!url.path){ 
+        if(!url||!url.path){
+            return
+        }else if(location.pathname==url.path){
             return
         }
-        else if(url.query&&Object.prototype.toString.call(url.query)==='[object Object]'){
-            let url_str = '';
-            for (const key in url.query) {
-                url_str += "&"+key+"="+url.query[key]
-            }
-            url_str = url_str.replace("&","?")
-            url_str = url.path + url_str
-            location.hash = url_str;
-            return
-        }
-        location.hash = url.path;
+        _this.$router.push(url);
     }
 }
 export default{
@@ -24,7 +17,7 @@ export default{
     render() {
         let store = this.$parent.store;
         return (
-            <div onclick={test(this.to)} class={this.to?"breadcrumb-item_link":"breadcrumb-item"}>
+            <div onclick={test.call(this,this.to)} class={this.to?"breadcrumb-item_link":"breadcrumb-item"}>
                 {this.$slots.default}
                 {   this.is_last||
                     store.state.separatorClass?<i class={store.state.separatorClass+' separator-item'}></i>

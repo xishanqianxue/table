@@ -13,10 +13,11 @@
       <table-column label="描述" prop="description"></table-column>
     </test-table> -->
     <Breadcrumb>
-      <breadcrumb-item :to="{path:'/test',query:{name:'name11',time:'2021'}}">666</breadcrumb-item>
-      <breadcrumb-item>44</breadcrumb-item>
+      <breadcrumb-item :to="{path:'/test1',query:{name:'test11'}}">666</breadcrumb-item>
+      <breadcrumb-item :to="{path:'/test2',query:{name:'test222'}}">44</breadcrumb-item>
       <breadcrumb-item>33</breadcrumb-item>
     </Breadcrumb>
+    <router-view></router-view>
   </div>
 </template>
 
